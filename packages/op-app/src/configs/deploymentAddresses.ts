@@ -226,4 +226,14 @@ export const deploymentAddresses: Record<string, DeploymentAddresses> = {
     OptimismPortalProxy: '0x0550548367B568C129b1dC7b2B5C6273Cbd2da76',
     ProxyAdmin: '0xf592f1730154cE9e3F1793b583582B31A00EFBf1',
   },
+  '11155931': {
+    AddressManager: "0x38c3f4e9a9ce5d7ec41911193ab569c1f2078e36",
+    L1CrossDomainMessengerProxy: "0x6a12f680e35e27cc76bc25edf9ac7f4600e5656b",
+    L1ERC721BridgeProxy: "0xecc876b86e04a2999702c42be2c1628295cb20a5",
+    L1StandardBridgeProxy: "0xf2e9021d083577ad5cd4f65613bf226fc572953f",
+    L2OutputOracleProxy: "0x0000000000000000000000000000000000000000",
+    OptimismMintableERC20FactoryProxy: "0x0f9eddefb4cb515834f501705630e60d973e6b00",
+    OptimismPortalProxy: "0x965dcca17af63e36957bd8488cc50d3dd146c317",
+    ProxyAdmin: "0x8c5753375dc0eef1c4e0b70f65b69239840c24cd",
+  }
 }

@@ -1,7 +1,8 @@
+import { NetworkPair, networkPairsByGroup, NetworkType } from '@eth-optimism/op-app'
 import { useMemo } from 'react'
 
-import { networkPairsByGroup } from '..'
-import type { NetworkPair, NetworkType } from '../types'
+// RISE TODO: Resolve the duplication from op-app.
+// For now, this helps resolve the issue: `useConfig` must be used within `WagmiProvider`
 
 export type UseOPNetworkArgs = {
   chainId?: number

@@ -1,7 +1,7 @@
 import '@/globals.css'
 import '@rainbow-me/rainbowkit/styles.css'
 
-import logo from '@/assets/logo.svg'
+import logo from '@/assets/rise-logo.svg'
 
 import { RouterProvider, Outlet, createBrowserRouter } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
@@ -17,8 +17,6 @@ import { ThemeProvider } from '@/providers/ThemeProvider'
 import { HeaderLeft } from '@/components/header/HeaderLeft'
 import { HeaderRight } from '@/components/header/HeaderRight'
 import { NETWORK_TYPE } from '@/constants/networkType'
-import { Home } from '@/routes/Home'
-import { Playground } from '@/routes/Playground'
 import { Toaster } from '@eth-optimism/ui-components'
 import { supersimL1, supersimL2A, supersimL2B } from '@eth-optimism/viem'
 
@@ -44,7 +42,7 @@ if (import.meta.env.VITE_SUPERSIM_ENABLED === 'true') {
 }
 
 const wagmiConfig = getDefaultConfig({
-  appName: 'Example OP Stack Bridge',
+  appName: 'Rise Bridge',
   projectId: import.meta.env.VITE_WALLET_CONNECT_PROJECT_ID,
   chains: opChains,
   transports: opChains.reduce(
@@ -76,7 +74,7 @@ const AppRoot = () => {
     <Providers>
       <div className={classNames.app}>
         <Layout
-          headerLeft={<HeaderLeft logo={logo} />}
+          headerLeft={ <HeaderLeft logo={logo}/>}
           headerRight={<HeaderRight />}
         >
           <Outlet />
@@ -85,8 +83,6 @@ const AppRoot = () => {
     </Providers>
   )
 }
-
-const playgroundRoutes = [{ index: true, element: <Playground /> }]
 
 const bridgeRoutes = [
   { index: true, element: <Bridge action="deposit" /> },
@@ -99,9 +95,8 @@ const router = createBrowserRouter([
     path: '/',
     element: <AppRoot />,
     children: [
-      { index: true, element: <Home /> },
-      { path: '/bridge', children: bridgeRoutes },
-      { path: '/playground', children: playgroundRoutes },
+      { index: true, element: <Bridge action="deposit" /> },
+      { path: '/bridge', children: bridgeRoutes},
     ],
   },
 ])
